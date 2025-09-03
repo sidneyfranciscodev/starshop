@@ -11,5 +11,30 @@
     {% if ships|length > 10 %}
         <p>That's a shipload of ships!</p>
     {% endif %}
+
+    {% for ship in ships %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>
+                    <a href="{{ path('app_starship_show', {id: ship.id}) }}">
+                        {{ ship.name }}
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <td>{{ ship.class }}</td>
+            </tr>
+            <tr>
+                <th>Captain</th>
+                <td>{{ ship.captain }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ ship.status }}</td>
+            </tr>
+        </table>
+    {% endfor %}
 </div>
 {% endblock %}
