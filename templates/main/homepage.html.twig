@@ -2,4 +2,14 @@
 
 {% block title %}Starshop: Beam up some parts! {% endblock %}
 
-{% block body %} {% endblock %}
+{% block body %}
+<h1>Starshop: your monopoly-busting option for Starship parts!</h1>
+
+<div>
+    <h3>Browse through {{ ships|length }} starships!</h3>
+
+    {% if ships|length > 10 %}
+        <p>That's a shipload of ships!</p>
+    {% endif %}
+</div>
+{% endblock %}

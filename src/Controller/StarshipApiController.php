@@ -13,6 +13,7 @@ final class StarshipApiController extends AbstractController
     public function getCollection(StarshipRepository $repository): Response
     {
         $starships = $repository->findAll();
+        
         return $this->json($starships);
     }
 }
