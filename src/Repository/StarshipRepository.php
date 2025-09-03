@@ -6,7 +6,7 @@ use App\Model\Starship;
 
 class StarshipRepository
 {
-    public function findAll()
+    public function findAll(): array
     {
         return [
             new Starship(

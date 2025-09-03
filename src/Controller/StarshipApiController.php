@@ -7,9 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+
+#[Route('/api/starships')]
 final class StarshipApiController extends AbstractController
 {
-    #[Route('/api/starships', name: 'app_starship_api')]
+    #[Route('', name: 'app_starship_api', methods: ['GET'])]
     public function getCollection(StarshipRepository $repository): Response
     {
         $starships = $repository->findAll();
