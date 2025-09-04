@@ -13,9 +13,11 @@ class MainController extends AbstractController
     public function homepage(StarshipRepository $repository): Response
     {
         $ships = $repository->findAll();
+        $ship = $repository->find(1);
 
        return $this->render('main/homepage.html.twig', [
         'ships' => $ships,
+        'ship' => $ship,
        ]);
     }
 }
