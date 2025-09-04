@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Model\Starship;
+use App\Enum\StarshipStatusEnum;
 
 class StarshipRepository
 {
@@ -14,21 +15,21 @@ class StarshipRepository
                 'USS Enterprise',
                 'Explorer',
                 'James T. Kirk',
-                'Active'
+                StarshipStatusEnum::IN_PROGRESS,
             ),
             new Starship(
                 2,
                 'Millennium Falcon',
                 'Freighter',
                 'Han Solo',
-                'repaired'
+                StarshipStatusEnum::WAITING,
             ),
             new Starship(
                 3,
                 'Battlestar Galactica',
                 'Warship',
                 'William Adama',
-                'under construction'
+                StarshipStatusEnum::COMPLETED,
             ),
         ];
     }
