@@ -1,0 +1,118 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+
+  .content {
+    flex: 1;
+    width: 100%;
+    padding: 2.5rem 3rem 0;
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .queue {
+      .ship-item {
+        background: #16202A;
+        border-radius: 1rem;
+        padding: 1.25rem 2.75rem 1.25rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 1174px) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .ship-info {
+          display: flex;
+          justify-content: center;
+
+          @media (min-width: 1174px) {
+            justify-content: flex-start;
+          }
+
+          img {
+            height: 83px;
+            width: 84px;
+          }
+
+          .ship-details {
+            margin-left: 1.25rem;
+
+            .status-badge {
+              background: rgba(251, 191, 36, 0.1); // amber-400/10
+            }
+
+            h4 {
+              font-size: 22px;
+              font-weight: 600;
+              padding-top: 0.25rem;
+
+              a {
+                text-decoration: none;
+
+                &:hover {
+                  color: #e2e8f0; // slate-200
+                }
+              }
+            }
+          }
+        }
+
+        .ship-meta {
+          display: flex;
+          justify-content: center;
+          margin-top: 0.5rem;
+          flex-shrink: 0;
+
+          @media (min-width: 1174px) {
+            margin-top: 0;
+            justify-content: flex-start;
+          }
+
+          .meta-item {
+            padding-right: 2rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+            &:last-child {
+              border-right: none;
+              padding-left: 2rem;
+              padding-right: 0;
+            }
+
+            .label {
+              color: #94a3b8;
+              font-size: 0.75rem;
+            }
+
+            .value {
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+
+    .browse {
+      font-size: 1.125rem;
+      margin-top: 1.25rem;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+
+      a {
+        text-decoration: underline;
+        font-weight: 600;
+      }
+    }
+  }
+}

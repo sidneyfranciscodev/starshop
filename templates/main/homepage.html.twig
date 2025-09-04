@@ -1,41 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Starshop: Beam up some parts! {% endblock %}
+{% block title %}Starshop: Beam up some parts!{% endblock %}
 
 {% block body %}
-{{ include('main/_shipStatusAside.html.twig') }}
-<h1>Starshop: your monopoly-busting option for Starship parts!</h1>
+<main class="main-layout">
+    {{ include('main/_shipStatusAside.html.twig') }}
 
-<div>
-    <h3>Browse through {{ ships|length }} starships!</h3>
+    <div class="content">
+        <h1>Ship Repair Queue</h1>
+        <div class="queue">
+        {% for ship in ships %}
+            <div class="ship-item">
+                <div class="ship-info">
+                    <img src="{{ asset('/images/status-in-progress.png') }}" alt="Status: in progress">
+                    <div class="ship-details">
+                        <div class="status-badge">
+                            <div class="status-dot"></div>
+                            <p>{{ ship.status }}</p>
+                        </div>
+                        <h4>
+                            <a href="{{ path('app_starship_show', {id: ship.id}) }}">{{ ship.name }}</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="ship-meta">
+                    <div class="meta-item">
+                        <p class="label">Captain</p>
+                        <p class="value">{{ ship.captain }}</p>
+                    </div>
+                    <div class="meta-item">
+                        <p class="label">Class</p>
+                        <p class="value">{{ ship.class }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
 
-    {% if ships|length > 10 %}
-        <p>That's a shipload of ships!</p>
-    {% endif %}
-
-    {% for ship in ships %}
-        <table>
-            <tr>
-                <th>Name</th>
-                <td>
-                    <a href="{{ path('app_starship_show', {id: ship.id}) }}">
-                        {{ ship.name }}
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <th>Class</th>
-                <td>{{ ship.class }}</td>
-            </tr>
-            <tr>
-                <th>Captain</th>
-                <td>{{ ship.captain }}</td>
-            </tr>
-            <tr>
-                <th>Status</th>
-                <td>{{ ship.status }}</td>
-            </tr>
-        </table>
-    {% endfor %}
-</div>
+        <p class="browse">
+            Looking for your next galactic ride?
+            <a href="{{ path('app_main') }}">Browse the {{ ships|length * 10 }} starships for sale!</a>
+        </p>
+    </div>
+</main>
 {% endblock %}
