@@ -9,7 +9,7 @@
     <div class="ship-status">
         <div class="status-badge">
             <div class="status-dot"></div>
-            <p>in progress</p>
+            <p>{{ ship.statusString }}</p>
         </div>
         <h3>
             <a href="{{ path('app_starship_show', { id: ship.id }) }}">
