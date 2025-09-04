@@ -50,7 +50,7 @@ class Starship
         return match($this->status) {
             StarshipStatusEnum::WAITING => 'images/status-waiting.png',
             StarshipStatusEnum::IN_PROGRESS => 'images/status-in-progress.png',
-            StarshipStatusEnum::COMPLETED => 'images/status-completed.png',
+            StarshipStatusEnum::COMPLETE => 'images/status-complete.png',
         };
     }
 }

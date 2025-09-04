@@ -29,7 +29,7 @@ class StarshipRepository
                 'Battlestar Galactica',
                 'Warship',
                 'William Adama',
-                StarshipStatusEnum::COMPLETED,
+                StarshipStatusEnum::COMPLETE,
             ),
         ];
     }
