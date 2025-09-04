@@ -25,6 +25,7 @@
         "symfony/twig-bundle": "7.3.*",
         "symfony/ux-turbo": "^2.30",
         "symfony/yaml": "7.3.*",
+        "symfonycasts/sass-bundle": "^0.8.3",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
     },
