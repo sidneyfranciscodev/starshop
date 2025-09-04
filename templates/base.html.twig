@@ -11,8 +11,26 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
-        <img src="{{ asset('images/starshop-logo.png') }}" alt="Starshop Logo">
-        {% block body %}{% endblock %}
+    <body class="app-body">
+        <div class="layout">
+            <div>
+                <header class="header">
+                    <a href="{{ path('app_main') }}">
+                        <img class="logo" src="{{ asset('images/starshop-logo.png') }}" alt="starshop logo">
+                    </a>
+                    <nav class="nav">
+                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#">Contact</a>
+                        <a class="btn-get-started" href="#">Get Started</a>
+                    </nav>
+                </header>
+                {% block body %}{% endblock %}
+            </div>
+            <div class="footer">
+                Made with ❤️ by 
+                <a class="footer-link" href="https://symfonycasts.com">SymfonyCasts</a>
+            </div>
+        </div>
     </body>
 </html>
