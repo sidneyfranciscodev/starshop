@@ -3,20 +3,33 @@
 {% block title %} {{ship.name}} {% endblock %}
 
 {% block body %}
-    <h1>{{ ship.name }}</h1>
+<div class="back-button-container">
+    <a class="back-button" href="{{ path('app_main') }}">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
+            <path fill="#000" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+        </svg>
+        Back
+    </a>
+</div>
 
-    <table>
-        <tr>
-            <th>Class</th>
-            <td>{{ ship.class }}</td>
-        </tr>
-        <tr>
-            <th>Captain</th>
-            <td>{{ ship.captain }}</td>
-        </tr>
-        <tr>
-            <th>Status</th>
-            <td>{{ ship.status }}</td>
-        </tr>
-    </table>
+<div class="ship-detail">
+    <div class="ship-image">
+        <img src="{{ asset('images/purple-rocket.png') }}" alt="purple ship launching">
+    </div>
+    <div class="ship-info">
+        <div class="info-card">
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                <p>{{ ship.status }}</p>
+            </div>
+            <h1>{{ ship.name }}</h1>
+            <h4>Spaceship Captain</h4>
+            <p class="value">{{ ship.captain }}</p>
+            <h4>Class</h4>
+            <p class="value">{{ ship.class }}</p>
+            <h4>Ship Status</h4>
+            <p class="value">30,000 lys to next service</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
