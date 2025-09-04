@@ -12,14 +12,14 @@
         {% for ship in ships %}
             <div class="ship-item">
                 <div class="ship-info">
-                    <img src="{{ asset('/images/status-in-progress.png') }}" alt="Status: in progress">
+                    <img src="{{ asset(ship.StatusImageFilename) }}" alt="Status: {{ ship.statusString }}">
                     <div class="ship-details">
                         <div class="status-badge">
                             <div class="status-dot"></div>
                             <p>{{ ship.statusString }}</p>
                         </div>
                         <h4>
-                            <a href="{{ path('app_starship_show', {id: ship.id}) }}">{{ ship.name }}</a>
+                            <a href="{{ path('app_starship_show', { id: ship.id }) }}">{{ ship.name }}</a>
                         </h4>
                     </div>
                 </div>
