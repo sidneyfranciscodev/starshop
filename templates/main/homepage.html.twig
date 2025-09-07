@@ -21,6 +21,9 @@
                         <h4>
                             <a href="{{ path('app_starship_show', { id: ship.id }) }}">{{ ship.name }}</a>
                         </h4>
+                        <div>
+                            Arrived at: {{ ship.arrivedAt | ago }}
+                        </div>
                     </div>
                 </div>
                 <div class="ship-meta">

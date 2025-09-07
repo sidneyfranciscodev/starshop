@@ -16,6 +16,7 @@ class StarshipRepository
                 'Explorer',
                 'James T. Kirk',
                 StarshipStatusEnum::IN_PROGRESS,
+                new \DateTimeImmutable('2025-07-04 10:00:00'),
             ),
             new Starship(
                 2,
@@ -23,6 +24,7 @@ class StarshipRepository
                 'Freighter',
                 'Han Solo',
                 StarshipStatusEnum::WAITING,
+                new \DateTimeImmutable('2025-07-06 14:30:00'),
             ),
             new Starship(
                 3,
@@ -30,6 +32,7 @@ class StarshipRepository
                 'Warship',
                 'William Adama',
                 StarshipStatusEnum::COMPLETE,
+                new \DateTimeImmutable('2025-07-02 09:15:00'),
             ),
         ];
     }
