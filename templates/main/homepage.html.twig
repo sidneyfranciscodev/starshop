@@ -45,13 +45,13 @@
             <a href="{{ path('app_main') }}">Browse the {{ ships|length * 10 }} starships for sale!</a>
         </p>
 
-        <div class="iss-section">
+        <div class="iss-location">
             <h2 class="iss-heading">Iss Location</h2>
             <p>Time: {{ issData.timestamp|date }} </p>
-            <p>Altitude {{  issData.altitude|date }} </p>
-            <p>Latitude: {{ issData.latitude|date }} </p>
-            <p>Longitude: {{ issData.longitude|date }} </p>
-            <p>Visibility: {{ issData.visibility|date }} </p>
+            <p>Altitude: {{  issData.altitude }} </p>
+            <p>Latitude: {{ issData.latitude }} </p>
+            <p>Longitude: {{ issData.longitude }} </p>
+            <p>Visibility: {{ issData.visibility }} </p>
         </div>
     </div>
 </main>
