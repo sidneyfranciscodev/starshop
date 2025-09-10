@@ -26,6 +26,18 @@
                     </nav>
                 </header>
                 {% block body %}{% endblock %}
+
+                <div class="iss-location">
+                    {% set issData = get_iss_location_data() %}
+                    <div title="Updated At: {{ issData.timestamp|date }} ">
+                        ISS Location: ({{ issData.visibility }})
+                    </div>
+                    <div>
+                        <p>Altitude: {{  issData.altitude }} </p>
+                        <p>Latitude: {{ issData.latitude }} </p>
+                        <p>Longitude: {{ issData.longitude }} </p>
+                    </div>
+                </div>
             </div>
             <div class="footer">
                 Made with ❤️ by
