@@ -19,3 +19,8 @@ framework:
         pools:
             iss_location_pool:
                 default_lifetime: 60
+
+when@prod:
+    framework:
+        cache:
+            app: cache.adapter.filesystem
